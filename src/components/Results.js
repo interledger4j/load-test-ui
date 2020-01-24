@@ -33,7 +33,7 @@ const Results = () => {
   };
 
   useEffect(() => {
-    fetch('https://storage.googleapis.com/storage/v1/b/ilp-shenanigans-load-test-results/o?delimiter=%2F').then((response) => {
+    fetch('https://storage.googleapis.com/storage/v1/b/ilp4j-load-test-results/o?delimiter=%2F').then((response) => {
       response.json().then(json => {
         // setTestResults(json.prefixes.map(parsePrefix));
         console.log(parsePrefixes(json.prefixes));
@@ -50,7 +50,7 @@ const Results = () => {
           <ul>
             {testResults[key].results.map((prefix) => (
               <li key={prefix.key}>
-                <a target="_blank" href={`http://storage.googleapis.com/ilp-shenanigans-load-test-results/${prefix.key}index.html`}>
+                <a target="_blank" href={`http://storage.googleapis.com/ilp4j-load-test-results/${prefix.key}index.html`}>
                   {prefix.time}
                 </a>
               </li>
